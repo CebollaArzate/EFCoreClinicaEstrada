@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+<Node Id="IModel" Label="FisioEstradaDbContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="7.0.4" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
+Relational:MaxIdentifierLength: 128
+RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]
+SqlServer:ValueGenerationStrategy: IdentityColumn" Category="Model" Group="Expanded" />
+<Node Id = "ConsultaTerapia" Label="ConsultaTerapia" Name="ConsultaTerapia" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Consulta" Label="Consulta" Name="Consulta" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Consultas
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "ConsultaTerapia.ConsultasId" Label="ConsultasId (Guid)" Name="ConsultasId" Category="Property Primary" Type="Guid" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "ConsultaTerapia.TerapiasId" Label="TerapiasId (Guid)" Name="TerapiasId" Category="Property Primary" Type="Guid" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "ExpedienteClinico" Label="ExpedienteClinico" Name="ExpedienteClinico" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: ExpedientesClinicos
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Consulta.Id" Label="Id (Guid)" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Consulta.FisioTerapeuta" Label="FisioTerapeuta (1)" Name="FisioTerapeuta" Category="Navigation Property" Type="Terapeuta"  Field="" Dependent="" Principal="Terapeuta" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Consulta.Paciente" Label="Paciente (1)" Name="Paciente" Category="Navigation Property" Type="Paciente"  Field="" Dependent="" Principal="Paciente" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Consulta.Soap" Label="Soap (1)" Name="Soap" Category="Navigation Property" Type="NotaSoap"  Field="" Dependent="" Principal="NotaSoap" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Consulta.Terapias" Label="Terapias (1)" Name="Terapias" Category="Navigation Property" Type="List&lt;Terapia&gt;"  Field="" Dependent="" Principal="" Inverse="Consultas" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Consulta.ConDescuento" Label="ConDescuento (bool)" Name="ConDescuento" Category="Property Required" Type="bool" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.ExpedienteClinicoId" Label="ExpedienteClinicoId (Guid?)" Name="ExpedienteClinicoId" Category="Property Foreign" Type="Guid?" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.FechaHora" Label="FechaHora (DateTime)" Name="FechaHora" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.FisioTerapeutaId" Label="FisioTerapeutaId (Guid)" Name="FisioTerapeutaId" Category="Property Foreign" Type="Guid" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.MotivoConsulta" Label="MotivoConsulta (string)" Name="MotivoConsulta" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.PacienteId" Label="PacienteId (Guid)" Name="PacienteId" Category="Property Foreign" Type="Guid" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.PorcentajeDescuento" Label="PorcentajeDescuento (float)" Name="PorcentajeDescuento" Category="Property Required" Type="float" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.Precio" Label="Precio (decimal)" Name="Precio" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.Realizada" Label="Realizada (bool)" Name="Realizada" Category="Property Required" Type="bool" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Consulta.SoapId" Label="SoapId (Guid)" Name="SoapId" Category="Property Foreign" Type="Guid" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "NotaSoap" Label="NotaSoap" Name="NotaSoap" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: NotasSoap
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "ExpedienteClinico.Id" Label="Id (Guid)" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "ExpedienteClinico.Consultas" Label="Consultas (*)" Name="Consultas" Category="Navigation Collection" Type="IList&lt;Consulta&gt;"  Field="" Dependent="Consulta" Principal="" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "ExpedienteClinico.Paciente" Label="Paciente (1)" Name="Paciente" Category="Navigation Property" Type="Paciente"  Field="" Dependent="" Principal="Paciente" Inverse="Expediente" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "ExpedienteClinico.PacienteId" Label="PacienteId (Guid)" Name="PacienteId" Category="Property Foreign" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Paciente" Label="Paciente" Name="Paciente" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Pacientes
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "NotaSoap.Id" Label="Id (Guid)" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "NotaSoap.Evaluacion" Label="Evaluacion (string)" Name="Evaluacion" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "NotaSoap.Objetivo" Label="Objetivo (string)" Name="Objetivo" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "NotaSoap.Plan" Label="Plan (string)" Name="Plan" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "NotaSoap.Subjetivo" Label="Subjetivo (string)" Name="Subjetivo" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta" Label="Terapeuta" Name="Terapeuta" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Terapeutas
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Paciente.Id" Label="Id (Guid)" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Paciente.Expediente" Label="Expediente (1)" Name="Expediente" Category="Navigation Property" Type="ExpedienteClinico"  Field="" Dependent="ExpedienteClinico" Principal="" Inverse="Paciente" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Paciente.Celular" Label="Celular (string)" Name="Celular" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Paciente.FechaAlta" Label="FechaAlta (DateTime)" Name="FechaAlta" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Paciente.FechaNacimiento" Label="FechaNacimiento (DateTime)" Name="FechaNacimiento" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Paciente.Nombre" Label="Nombre (string)" Name="Nombre" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapia" Label="Terapia" Name="Terapia" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Terapias
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Terapeuta.Id" Label="Id (Guid)" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Terapeuta.CedulaProfesional" Label="CedulaProfesional (string)" Name="CedulaProfesional" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta.Celular" Label="Celular (string)" Name="Celular" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta.FechaIngreso" Label="FechaIngreso (DateTime)" Name="FechaIngreso" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta.FechaNacimiento" Label="FechaNacimiento (DateTime)" Name="FechaNacimiento" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta.Nombre" Label="Nombre (string)" Name="Nombre" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta.RFC" Label="RFC (string)" Name="RFC" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapeuta.Titulo" Label="Titulo (string)" Name="Titulo" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapia" Label="Terapia" Name="Terapia" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
+<Node Id = "Terapia.Id" Label="Id (Guid)" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Terapia.Nombre" Label="Nombre (string)" Name="Nombre" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Terapia.Consultas" Label="Consultas (List&lt;Consulta&gt;)" Name="Consultas" Category="Property Optional" Type="List&lt;Consulta&gt;" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+  </Nodes>
+  <Links>
+<Link Source = "IModel" Target="ConsultaTerapia" Category="Contains" />
+<Link Source = "IModel" Target="Consulta" Category="Contains" />
+<Link Source = "ConsultaTerapia" Target="ConsultaTerapia.ConsultasId" Category="Contains" />
+<Link Source="ConsultaTerapia" Target="Consulta" From="ConsultaTerapia.ConsultasId" To="Consulta.Id" Name="ConsultaTerapia -> Consulta" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="ConsultaTerapia" Target="Terapia" From="ConsultaTerapia.TerapiasId" To="Terapia.Id" Name="ConsultaTerapia -> Terapia" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "ConsultaTerapia" Target="ConsultaTerapia.TerapiasId" Category="Contains" />
+<Link Source = "IModel" Target="ExpedienteClinico" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.FisioTerapeuta" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.Paciente" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.Soap" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.Terapias" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.Id" Category="Contains" />
+<Link Source="Consulta" Target="ExpedienteClinico" From="Consulta.ExpedienteClinicoId" To="ExpedienteClinico.Id" Name="Consulta -> ExpedienteClinico" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Consulta" Target="Terapeuta" From="Consulta.FisioTerapeutaId" To="Terapeuta.Id" Name="Consulta -> Terapeuta" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Consulta" Target="Paciente" From="Consulta.PacienteId" To="Paciente.Id" Name="Consulta -> Paciente" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Consulta" Target="NotaSoap" From="Consulta.SoapId" To="NotaSoap.Id" Name="Consulta -> NotaSoap" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Consulta" Target="Consulta.ConDescuento" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.ExpedienteClinicoId" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.FechaHora" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.FisioTerapeutaId" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.MotivoConsulta" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.PacienteId" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.PorcentajeDescuento" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.Precio" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.Realizada" Category="Contains" />
+<Link Source = "Consulta" Target="Consulta.SoapId" Category="Contains" />
+<Link Source = "IModel" Target="NotaSoap" Category="Contains" />
+<Link Source = "ExpedienteClinico" Target="ExpedienteClinico.Consultas" Category="Contains" />
+<Link Source = "ExpedienteClinico" Target="ExpedienteClinico.Paciente" Category="Contains" />
+<Link Source = "ExpedienteClinico" Target="ExpedienteClinico.Id" Category="Contains" />
+<Link Source="ExpedienteClinico" Target="Paciente" From="ExpedienteClinico.PacienteId" To="Paciente.Id" Name="ExpedienteClinico -> Paciente" Annotations="" IsUnique="True" Label="1:1" Category="Foreign Key" />
+<Link Source = "ExpedienteClinico" Target="ExpedienteClinico.PacienteId" Category="Contains" />
+<Link Source = "IModel" Target="Paciente" Category="Contains" />
+<Link Source = "NotaSoap" Target="NotaSoap.Id" Category="Contains" />
+<Link Source = "NotaSoap" Target="NotaSoap.Evaluacion" Category="Contains" />
+<Link Source = "NotaSoap" Target="NotaSoap.Objetivo" Category="Contains" />
+<Link Source = "NotaSoap" Target="NotaSoap.Plan" Category="Contains" />
+<Link Source = "NotaSoap" Target="NotaSoap.Subjetivo" Category="Contains" />
+<Link Source = "IModel" Target="Terapeuta" Category="Contains" />
+<Link Source = "Paciente" Target="Paciente.Expediente" Category="Contains" />
+<Link Source = "Paciente" Target="Paciente.Id" Category="Contains" />
+<Link Source = "Paciente" Target="Paciente.Celular" Category="Contains" />
+<Link Source = "Paciente" Target="Paciente.FechaAlta" Category="Contains" />
+<Link Source = "Paciente" Target="Paciente.FechaNacimiento" Category="Contains" />
+<Link Source = "Paciente" Target="Paciente.Nombre" Category="Contains" />
+<Link Source = "IModel" Target="Terapia" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.Id" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.CedulaProfesional" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.Celular" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.FechaIngreso" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.FechaNacimiento" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.Nombre" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.RFC" Category="Contains" />
+<Link Source = "Terapeuta" Target="Terapeuta.Titulo" Category="Contains" />
+<Link Source = "IModel" Target="Terapia" Category="Contains" />
+<Link Source = "Terapia" Target="Terapia.Id" Category="Contains" />
+<Link Source = "Terapia" Target="Terapia.Nombre" Category="Contains" />
+<Link Source = "Terapia" Target="Terapia.Consultas" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+  <Properties>
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+  </Properties>
+</DirectedGraph>
